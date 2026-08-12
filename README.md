@@ -1,25 +1,25 @@
 # Task II
 
 ```sql
--- CREATE DATABASE InventoryDB;
--- USE InventoryDB;
+CREATE DATABASE InventoryDB;
+USE InventoryDB;
 
--- CREATE TABLE Category (
---     category_id INT AUTO_INCREMENT PRIMARY KEY,
---     category_name VARCHAR(100) UNIQUE NOT NULL,
---     description VARCHAR(255)
--- );
+CREATE TABLE Category (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    category_name VARCHAR(100) UNIQUE NOT NULL,
+    description VARCHAR(255)
+);
 
--- CREATE TABLE Product (
---     product_id INT AUTO_INCREMENT PRIMARY KEY,
---     product_name VARCHAR(150) NOT NULL,
---     category_id INT NOT NULL,
---     price DECIMAL(10,2) NOT NULL,
---     stock INT DEFAULT 0 NOT NULL,
---     CONSTRAINT fk_product_category
---         FOREIGN KEY (category_id)
---         REFERENCES Category(category_id)
--- );
+CREATE TABLE Product (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(150) NOT NULL,
+    category_id INT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    stock INT DEFAULT 0 NOT NULL,
+    CONSTRAINT fk_product_category
+        FOREIGN KEY (category_id)
+        REFERENCES Category(category_id)
+);
 
 -- Insert into Category (category_id is AUTO_INCREMENT, so omit it)
 INSERT INTO Category (category_name, description)
